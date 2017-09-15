@@ -1,0 +1,113 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+GET     /about                                  Application.about
+
+# Research Area section
+GET     /research-areas                         ResearchAreaCtrl.index
+GET     /research-areas/{id}                           ResearchAreaCtrl.details(Long id)
+
+
+# Project section
+GET     /projects                               ProjectCtrl.index
+GET     /projects/{id}                          ProjectCtrl.details(Long id)
+
+
+# Member section
+GET     /researchers                            MemberCtrl.index
+GET     /researchers/{id}                       MemberCtrl.details(Long id)
+GET     /researchers/category/{id}               MemberCtrl.byCategory(Long id)
+
+
+# Publication section
+GET     /publications                           PublicationCtrl.index
+GET     /publications/researcher/{id}           PublicationCtrl.byMember(Long id)
+# New section
+GET     /news                                   NewCtrl.index
+GET     /news/{id}                              NewCtrl.details(Long id)
+GET     /news/section/{id}                      NewCtrl.bySection(Long id)
+
+
+
+
+# ADMIN SECTION
+GET     /admin/login                            admin.LoginAdminCtrl.index
+
+# ADMIN ABOUT
+GET     /admin/about                            admin.AboutAdminCtrl.index
+GET     /admin/about/add                        admin.AboutAdminCtrl.add
+GET     /admin/about/edit                       admin.AboutAdminCtrl.edit(Long id)
+
+# RESEARCHERS SECTION
+GET     /admin                                  admin.AdminCtrl.index
+GET     /admin/researchers                      admin.MemberAdminCtrl.index
+GET     /admin/researchers/add                  admin.MemberAdminCtrl.add
+POST    /admin/researchers/add                  admin.MemberAdminCtrl.save
+GET     /admin/researchers/{id}                 admin.MemberAdminCtrl.details(Long id)
+GET     /admin/researchers/edit/{id}            admin.MemberAdminCtrl.edit(Long id)
+POST    /admin/researchers/edit                 admin.MemberAdminCtrl.update
+DELETE  /admin/researchers/{id}                 admin.MemberAdminCtrl.delete(Long id)
+DELETE  /admin/researchers/category/{id}        admin.MemberAdminCtrl.deleteCategory(Long id)
+GET     /admin/researchers/category/add         admin.MemberAdminCtrl.addCategory
+GET     /admin/researchers/category/edit/{id}   admin.MemberAdminCTrl.editCategory(Long id)
+POST    /admin/researchers/category/save        admin.MemberAdminCtrl.saveCategory
+POST    /admin/researchers/category/update      admin.MemberAdminCtrl.updateCategory
+
+## Research Area admin
+GET     /admin/research-areas                   admin.ResearchAreaAdminCtrl.index
+GET     /admin/research-areas/add               admin.ResearchAreaAdminCtrl.add
+POST    /admin/research-areas/add               admin.ResearchAreaAdminCtrl.save
+GET     /admin/research-areas/{id}              admin.ResearchAreaAdminCtrl.details(Long id)
+GET     /admin/research-areas/edit/{id}         admin.ResearchAreaAdminCtrl.edit(Long id)
+POST    /admin/research-areas/edit              admin.ResearchAreaAdminCtrl.update
+DELETE  /admin/research-areas/{id}              admin.ResearchAreaAdminCtrl.delete(Long id)
+
+
+## Project admin
+GET     /admin/projects                   admin.ProjectAdminCtrl.index
+GET     /admin/projects/add               admin.ProjectAdminCtrl.add
+POST    /admin/projects/add               admin.ProjectAdminCtrl.save
+GET     /admin/projects/{id}              admin.ProjectAdminCtrl.details(Long id)
+GET     /admin/projects/edit/{id}         admin.ProjectAdminCtrl.edit(Long id)
+POST    /admin/projects/edit              admin.ProjectAdminCtrl.update
+DELETE  /admin/projects/{id}              admin.ProjectAdminCtrl.delete(Long id)
+
+
+## Publication admin
+GET     /admin/publications                   admin.PublicationAdminCtrl.index
+GET     /admin/publications/add               admin.PublicationAdminCtrl.add
+POST    /admin/publications/add               admin.PublicationAdminCtrl.save
+GET     /admin/publications/{id}              admin.PublicationAdminCtrl.details(Long id)
+GET     /admin/publications/edit/{id}         admin.PublicationAdminCtrl.edit(Long id)
+POST    /admin/publications/edit              admin.PublicationAdminCtrl.update
+DELETE  /admin/publications/{id}              admin.PublicationAdminCtrl.delete(Long id)
+
+
+## New admin
+GET     /admin/news                   admin.NewAdminCtrl.index
+GET     /admin/news/add               admin.NewAdminCtrl.add
+POST    /admin/news/add               admin.NewAdminCtrl.save
+GET     /admin/news/{id}              admin.NewAdminCtrl.details(Long id)
+GET     /admin/news/edit/{id}         admin.NewAdminCtrl.edit(Long id)
+POST    /admin/news/edit              admin.NewAdminCtrl.update
+DELETE  /admin/news/{id}              admin.NewAdminCtrl.delete(Long id)
+GET     /admin/news/sections/edit     admin.NewAdminCtrl.editSection(Long id)
+POST    /admin/news/sections/edit     admin.NewAdminCtrl.updateSection
+GET     /admin/news/sections/add      admin.NewAdminCtrl.addSection
+POST    /admin/news/sections          admin.NewAdminCtrl.saveSection
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+
+# Import Secure routes
+*      /                                              module:secure

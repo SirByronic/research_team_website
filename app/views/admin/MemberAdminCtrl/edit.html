@@ -1,0 +1,113 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Researchers Administration' /}
+#{set active: 'researchers' /}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">${member.fullName}</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            #{form @update(), enctype :'multipart/form-data'}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <input type="hidden" value="${member.id}" name="member.id"/>
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input class="form-control" name="member.fullName" value="${member.fullName}"/>
+                                    <span class="help-block error-color" >#{error 'member.fullName' /}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                #{select 'member.category',
+                                items:categories,
+                                valueProperty:'id',
+                                labelProperty:'name',
+                                class:'form-control' /}
+                                </div>
+                                <span class="help-block">Check the category, it's not checked by default.</span>
+                                <div class="form-group">
+                                    <label>Institution</label>
+                                    <input class="form-control" name="member.institution"  value="${member.institution}"/>
+                                    <span class="help-block error-color" >#{error 'member.institution' /}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>E-mail</label>
+                                    <input class="form-control" name="member.email"  value="${member.email}" />
+                                    <span class="help-block error-color" >#{error 'member.email' /}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>joinDate</label>
+                                    <input class="form-control" name="member.joinDate"  value="${member.joinDate}" />
+                                    <span class="help-block error-color" >#{error 'member.joinDate' /}</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Photo</label>
+                                    <div class="btn btn-default btn-file" style="display:block">
+                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                        &nbsp; Update photo <input type="file" class="form-control" name="photo">
+                                        <span id="selectedFile"></span>
+                                    </div>
+                                    <span class="help-block">To update the profil picture, upload a new one.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Personal URL</label>
+                                    <input class="form-control" name="member.url"  value="${member.url}" />
+                                    <span class="help-block error-color" >#{error 'member.url' /}</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telephone</label>
+                                    <input class="form-control" name="member.telephone"  value="${member.telephone}" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Fax</label>
+                                    <input class="form-control" name="member.fax"  value="${member.fax}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Presentation</label>
+                                    <textarea class="form-control" name="member.presentation" rows="8" id="summernote">
+                                        ${member.presentation}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer" style="text-align: right">
+                        <button type="submit" class="btn btn-outline btn-info">Save change</button>
+                    </div>
+                </div>
+            #{/form}
+        </div>
+    </div>
+</div>
+
+#{set 'moreStyles'}
+    #{stylesheet '../font-awesome/css/font-awesome.min.css'/}
+    #{stylesheet 'summernote.css'/}
+#{/set}
+#{set 'moreScripts'}
+    #{script 'summernote.min.js'/}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 100
+        });
+    });
+</script>
+#{/set}

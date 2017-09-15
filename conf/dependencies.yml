@@ -1,0 +1,7 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> secure
+    - com.cloudinary -> cloudinary 1.0.14
+

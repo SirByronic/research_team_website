@@ -1,0 +1,11 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+MemberCategory(studentCategory):
+  name: Ph.D Students
+  description: Category consisting of team members who are Ph.D Students
+
+MemberCategory(doctorCategory):
+  name: Ph. Doctors
+  description: Category consisting of team members who are Ph. Doctors
+  

@@ -1,0 +1,41 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Sections Administration' /}
+#{set active: 'news' /}
+
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">Add new section</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <form method="POST" action="@{admin.NewAdminCtrl.saveSection}">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" name="section.name"  value="${flash['section.name']}"/>
+                                    <span class="help-block error-color">#{error 'section.name'/}</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input class="form-control" name="section.description"  />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer" style="text-align: right">
+                        <button type="submit" class="btn btn-primary">Save change</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="list-group">
+    <div class="list-group-item header">
+        <span class="glyphicon glyphicon-stats"></span> Statistics
+    </div>
+    <a href="@{admin.MemberAdminCtrl.index()}" class="list-group-item">
+        <span class="glyphicon glyphicon-user"></span> Researchers
+        <button type="button" class="pull-right btn btn-default btn-circle" style="margin-top: -5px">
+            ${statistics.get("membersCount")}
+        </button>
+    </a>
+    <a href="@{admin.ResearchAreaAdminCtrl.index()}" class="list-group-item">
+        <span class="glyphicon glyphicon-globe"></span> Research Areas
+        <button type="button" class="pull-right btn btn-default btn-circle" style="margin-top: -5px">
+        ${statistics.get("researchAreasCount")}
+        </button>
+    </a>
+    <a href="@{admin.ResearchAreaAdminCtrl.index()}" class="list-group-item">
+        <span class="glyphicon glyphicon-screenshot"></span> Projects
+        <button type="button" class="pull-right btn btn-default btn-circle" style="margin-top: -5px">
+        ${statistics.get("projectsCount")}
+        </button>
+    </a>
+    <a href="@{admin.PublicationAdminCtrl.index()}" class="list-group-item">
+        <span class="glyphicon glyphicon-file"></span> Publications
+        <button type="button" class="pull-right btn btn-default btn-circle" style="margin-top: -5px">
+        ${statistics.get("publicationsCount")}
+        </button>
+    </a>
+    <a href="@{admin.NewAdminCtrl.index()}" class="list-group-item">
+        <span class="glyphicon glyphicon-pencil"></span> News
+        <button type="button" class="pull-right btn btn-default btn-circle" style="margin-top: -5px">
+        ${statistics.get("newsCount")}
+        </button>
+    </a>
+    <a href="#" class="list-group-item">
+        <span class="glyphicon glyphicon-calendar"></span> Events
+        <button type="button" class="pull-right btn btn-default btn-circle" style="margin-top: -5px">
+        ${statistics.get("eventsCount")}
+        </button>
+    </a>
+</div>

@@ -1,0 +1,151 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Researchers Administration' /}
+#{set active: 'researchers' /}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">Researchers</h3>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div id="success-msg" class="alert alert-success" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div id="error-msg" class="alert alert-danger" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align: right">
+                    <a href="@{admin.MemberAdminCtrl.add()}"
+                       type="button" class="btn btn-primary">Add Researcher</a>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover"
+                               id="researchers-table">
+                            <thead>
+                            <tr>
+                                <th>Full Name</th>
+                                <th>Institution</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            #{list items:members,as:'member'}
+                            <tr id="member-${member.id}">
+                                <td>${member.fullName}</td>
+                                <td>${member.institution}</td>
+                                <td class="center">${member.category.name}</td>
+                                <td style="text-align: center">
+                                    <a href="@{admin.MemberAdminCtrl.details(member.id)}"
+                                       class="btn btn-default btn-outline">
+                                        <i class="glyphicon glyphicon-eye-open"></i>
+                                    </a>
+                                    <a href="@{admin.MemberAdminCtrl.edit(member.id)}" type="button"
+                                       class="btn btn-default btn-outline">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </a>
+                                    <button type="submit" class="bt_delete btn btn-danger btn-outline"
+                                            onclick="deleteMember(${member.id})">
+                                        <i class="glyphicon glyphicon-remove"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            #{/list}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <div class="col-lg-4">
+            <div class="list-group">
+                <div class="list-group-item" style="background-color: #F5F5F5">
+                    <span class="glyphicon glyphicon-list-alt"></span> Categories
+                </div>
+            #{if categories.size() == 0}
+                <span class="list-group-item">No data available</span>
+            #{/if}
+            #{else}
+                #{list items:categories,as:'category'}
+                    <a href="@{admin.MemberAdminCtrl.editCategory(category.id)}" class="list-group-item">
+                        <span class="glyphicon glyphicon-user"></span> ${category.name}
+                        <div class="pull-right btn btn-default btn-circle" style="margin-top: -5px; cursor: default">
+                        ${ catCount.get(category.id)}
+                        </div>
+                    </a>
+                #{/list}
+            #{/else}
+                <div class="list-group-item" style="background-color: #F5F5F5; text-align: right">
+                    <a href="@{admin.MemberAdminCtrl.addCategory()}" class="btn btn-primary" style="margin-top: -5px">
+                        Add
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+#{set 'moreStyles'}
+    #{stylesheet 'plugins/dataTables.bootstrap.css'/}
+<style type="text/css">
+    table.dataTable thead .sorting:after,
+    table.dataTable thead .sorting_asc:after,
+    table.dataTable thead .sorting_desc:after {
+        content: "" !important;
+    }
+</style>
+#{/set}
+#{set 'moreScripts'}
+    #{script 'plugins/dataTables/jquery.dataTables.js'/}
+    #{script 'plugins/dataTables/dataTables.bootstrap.js'/}
+
+<script>
+    $(document).ready(function () {
+        $("#success-msg").css("display", "none");
+        $("#error-msg").css("display", "none");
+        $('#researchers-table').dataTable();
+    });
+</script>
+
+<script type="text/javascript">
+    function deleteMember(idMember) {
+        var deleteMemberRoute = #{jsRoute @admin.MemberAdminCtrl.delete(':id') /};
+        $.ajax({
+            url: deleteMemberRoute.url({id: idMember}),
+            type: deleteMemberRoute.method,
+            success: function (data, textStatus, jqXHR) {
+                if (data.status == "success") {
+                    $("#member-" + idMember).hide();
+                    $("#success-msg").append("<p>" + data.success_msg + "</p>");
+                    $("#success-msg").css("display", "block");
+                } else if (data.status == "error") {
+                    $("#error-msg").append("<p>" + data.error_msg + "</p>")
+                    $("#error-msg").css("display", "block");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+    }
+</script>
+#{/set}

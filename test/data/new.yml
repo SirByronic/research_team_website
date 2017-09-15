@@ -1,0 +1,23 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+New(IEEEConference):
+  title: IEEE Morocco Conference
+  summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam laudantium sed vitae! Aspernatur dolorum eos hic inventore recusandae saepe totam? Corporis cumque laudantium mollitia nesciunt, odio porro quia vel.
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam laudantium sed vitae! Aspernatur dolorum eos hic inventore recusandae saepe totam? Corporis cumque laudantium mollitia nesciunt, odio porro quia vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam laudantium sed vitae! Aspernatur dolorum eos hic inventore recusandae saepe totam? Corporis cumque laudantium mollitia nesciunt, odio porro quia vel.
+  keywords: Big data; IEEE; Conference; Morocco
+  imgURL: http://www.signals.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/S/y/Symbole-Plexi-gris-90-x-90-Salle-conference-PNI917_1.jpg
+  imgID: DZAzazazazazaz
+  datePublication: 2014-01-01
+  sections: [Section1,Section3]
+
+
+New(ThesisPresentation):
+  title: Automatic Ontology knowledge extraction thesis
+  summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam laudantium sed vitae! Aspernatur dolorum eos hic inventore recusandae saepe totam? Corporis cumque laudantium mollitia nesciunt, odio porro quia vel.
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem labore pariatur voluptatibus! Molestias, repellat, saepe! Aut dolorem eligendi, facilis impedit inventore minima natus, non porro praesentium quidem rerum, sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam laudantium sed vitae! Aspernatur dolorum eos hic inventore recusandae saepe totam? Corporis cumque laudantium mollitia nesciunt, odio porro quia vel.
+  keywords: Web semantic; Ontology; Knowledge management
+  imgURL: http://www.signals.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/S/y/Symbole-Plexi-gris-90-x-90-Salle-conference-PNI917_1.jpg
+  imgID: zezezezaeazeaz
+  datePublication: 2014-11-01
+  sections: [Section2,Section3]

@@ -1,0 +1,1128 @@
+#ced .navigation-bar,
+#ced .navbar {
+  width: 100%;
+  display: block;
+  background-color: #EEE;
+  color: #555;
+}
+
+#ced .navigation-bar .navigation-bar-content,
+#ced .navbar .navigation-bar-content,
+#ced .navigation-bar .navbar-content,
+#ced .navbar .navbar-content {
+  background-color: inherit;
+  color: inherit;
+  display: block;
+}
+#ced .navigation-bar .navigation-bar-content .element,
+#ced .navbar .navigation-bar-content .element,
+#ced .navigation-bar .navbar-content .element,
+#ced .navbar .navbar-content .element,
+#ced .navigation-bar .navigation-bar-content .element-divider,
+#ced .navbar .navigation-bar-content .element-divider,
+#ced .navigation-bar .navbar-content .element-divider,
+#ced .navbar .navbar-content .element-divider {
+  display: block;
+  float: left;
+  background-color: inherit;
+  position: relative;
+  height: 45px;
+}
+#ced .navigation-bar .navigation-bar-content .element.place-right,
+#ced .navbar .navigation-bar-content .element.place-right,
+#ced .navigation-bar .navbar-content .element.place-right,
+#ced .navbar .navbar-content .element.place-right,
+#ced .navigation-bar .navigation-bar-content .element-divider.place-right,
+#ced .navbar .navigation-bar-content .element-divider.place-right,
+#ced .navigation-bar .navbar-content .element-divider.place-right,
+#ced .navbar .navbar-content .element-divider.place-right {
+  float: right;
+}
+#ced .navigation-bar .navigation-bar-content .element,
+#ced .navbar .navigation-bar-content .element,
+#ced .navigation-bar .navbar-content .element,
+#ced .navbar .navbar-content .element {
+  padding: 15px;
+  line-height: 15px;
+  color: inherit;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+#ced .navigation-bar .navigation-bar-content .element:hover,
+#ced .navbar .navigation-bar-content .element:hover,
+#ced .navigation-bar .navbar-content .element:hover,
+#ced .navbar .navbar-content .element:hover {
+  background-color: #BDBDBD;
+  text-decoration: none;
+}
+#ced .navigation-bar .navigation-bar-content .element > a.dropdown-toggle,
+#ced .navbar .navigation-bar-content .element > a.dropdown-toggle,
+#ced .navigation-bar .navbar-content .element > a.dropdown-toggle,
+#ced .navbar .navbar-content .element > a.dropdown-toggle {
+  color: inherit;
+  position: relative;
+  padding-right: 5px !important;
+  margin-right: 5px;
+}
+#ced .navigation-bar .navigation-bar-content .element > a.dropdown-toggle:after,
+#ced .navbar .navigation-bar-content .element > a.dropdown-toggle:after,
+#ced .navigation-bar .navbar-content .element > a.dropdown-toggle:after,
+#ced .navbar .navbar-content .element > a.dropdown-toggle:after {
+  position: absolute;
+  left: 100%;
+  margin-left: 0;
+}
+#ced .navigation-bar .navigation-bar-content .element > .dropdown-menu,
+#ced .navbar .navigation-bar-content .element > .dropdown-menu,
+#ced .navigation-bar .navbar-content .element > .dropdown-menu,
+#ced .navbar .navbar-content .element > .dropdown-menu {
+  top: 100%;
+  left: 0;
+}
+
+#ced .navigation-bar .navigation-bar-content .element > .dropdown-menu.place-right,
+#ced .navbar .navigation-bar-content .element > .dropdown-menu.place-right,
+#ced .navigation-bar .navbar-content .element > .dropdown-menu.place-right,
+#ced .navbar .navbar-content .element > .dropdown-menu.place-right {
+  right: 0;
+  left: auto;
+}
+#ced .navigation-bar .navigation-bar-content .element-divider,
+#ced .navbar .navigation-bar-content .element-divider,
+#ced .navigation-bar .navbar-content .element-divider,
+#ced .navbar .navbar-content .element-divider {
+  padding: 15px 0;
+  line-height: 15px;
+  width: 1px !important;
+  border-left: 1px #A4A4A4 solid;
+  opacity: .3;
+  position: relative;
+}
+#ced .navigation-bar .navigation-bar-content .element-divider:before,
+#ced .navbar .navigation-bar-content .element-divider:before,
+#ced .navigation-bar .navbar-content .element-divider:before,
+#ced .navbar .navbar-content .element-divider:before {
+  content: "|";
+  visibility: hidden;
+}
+#ced .active-menu{
+    background-color: lightgray !important;
+}
+#ced .navigation-bar-content .brand,
+#ced .navbar-content .brand {
+  font-size: 18px;
+}
+#ced .navigation-bar-content form,
+#ced .navbar-content form {
+  margin: 0;
+  padding-bottom: 0 !important;
+  position: relative;
+}
+#ced .navigation-bar-content .element .input-control.text,
+#ced .navbar-content .element .input-control.text,
+#ced .navigation-bar-content .element .input-control.password,
+#ced .navbar-content .element .input-control.password {
+  width: auto;
+  height: auto;
+  position: relative;
+  margin: 0;
+  top: -6px;
+}
+#ced .navigation-bar-content .element .input-control.text [class*='btn-'],
+#ced .navbar-content .element .input-control.text [class*='btn-'],
+#ced .navigation-bar-content .element .input-control.password [class*='btn-'],
+#ced .navbar-content .element .input-control.password [class*='btn-'] {
+  top: 2px;
+  right: 2px;
+}
+#ced .navigation-bar-content .element .input-control.text input[type='text'],
+#ced .navbar-content .element .input-control.text input[type='text'],
+#ced .navigation-bar-content .element .input-control.password input[type='text'],
+#ced .navbar-content .element .input-control.password input[type='text'] {
+  font-size: 12px;
+}
+#ced .navigation-bar-content .input-control.checkbox,
+#ced .navbar-content .input-control.checkbox,
+#ced .navigation-bar-content .input-control.radio,
+#ced .navbar-content .input-control.radio {
+  position: relative;
+  margin: 0;
+  top: -6px;
+}
+#ced .navigation-bar-content .button,
+#ced .navbar-content .button,
+#ced .navigation-bar-content .image-button,
+#ced .navbar-content .image-button {
+  background-color: transparent;
+}
+#ced .navigation-bar-content .button,
+#ced .navbar-content .button {
+  margin-top: -14px;
+  background-color: inherit;
+}
+#ced .navigation-bar-content .image-button,
+#ced .navbar-content .image-button {
+  padding-right: 40px;
+  padding-left: 5px;
+  background-color: inherit;
+}
+#ced .navigation-bar-content .image-button:active,
+#ced .navbar-content .image-button:active {
+  left: auto;
+  right: auto;
+  top: auto;
+}
+#ced .navigation-bar-content .image-button img,
+#ced .navbar-content .image-button img {
+  width: 40px;
+  height: 40px;
+  margin-top: 2.5px;
+}
+#ced .navigation-bar-content .image-button.image-left,
+#ced .navbar-content .image-button.image-left {
+  padding-right: 5px;
+  padding-left: 40px;
+}
+#ced .navigation-bar-content [class*="icon-"],
+#ced .navbar-content [class*="icon-"] {
+  font-size: 16px !important;
+}
+
+etro .navigation-bar .element-menu,
+#ced .navbar .element-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: inherit;
+}
+#ced .navigation-bar .element-menu > li,
+#ced .navbar .element-menu > li {
+  display: block;
+  float: left;
+  position: relative;
+  color: inherit;
+}
+#ced .navigation-bar .element-menu > li > a,
+#ced .navbar .element-menu > li > a {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  line-height: 15px;
+  color: inherit;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+#ced .navigation-bar .element-menu > li > a.dropdown-toggle,
+#ced .navbar .element-menu > li > a.dropdown-toggle {
+  color: inherit;
+  position: relative;
+}
+#ced .navigation-bar .element-menu > li > a.dropdown-toggle:after,
+#ced .navbar .element-menu > li > a.dropdown-toggle:after {
+  position: absolute;
+  left: 95%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -5px;
+}
+#ced .navigation-bar .element-menu > li > .dropdown-menu,
+#ced .navbar .element-menu > li > .dropdown-menu {
+  top: 100%;
+  left: 0;
+}
+#ced .navigation-bar .element-menu > li > .dropdown-menu.place-right,
+#ced .navbar .element-menu > li > .dropdown-menu.place-right {
+  right: 0;
+  left: auto;
+}
+#ced .navigation-bar .element-menu > li:hover,
+#ced .navbar .element-menu > li:hover {
+  background-color: #00aafd;
+}
+#ced .navigation-bar .element-menu.drop-up li > .dropdown-menu,
+#ced .navbar .element-menu.drop-up li > .dropdown-menu {
+  top: auto;
+  bottom: 45px;
+}
+#ced .navigation-bar .element-menu.drop-up li > .dropdown-menu .dropdown-menu,
+#ced .navbar .element-menu.drop-up li > .dropdown-menu .dropdown-menu {
+  bottom: 0;
+}
+#ced .navigation-bar .pull-menu,
+#ced .navbar .pull-menu {
+  display: none;
+  float: right !important;
+  color: #fff;
+  cursor: pointer;
+  font: 1.8em sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 45px;
+  width: 40px;
+  line-height: 20px;
+  margin: 0;
+}
+#ced .navigation-bar .pull-menu:before,
+#ced .navbar .pull-menu:before {
+  content: "\2261";
+  position: absolute;
+  font-size: 20pt;
+  top: 10px;
+  left: 10px;
+}
+#ced .navigation-bar .pull-menu input[type="checkbox"],
+#ced .navbar .pull-menu input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+#ced .navigation-bar-content:before,
+#ced .navbar-content:before,
+#ced .navigation-bar-content:after,
+#ced .navbar-content:after {
+  display: table;
+  content: "";
+}
+#ced .navigation-bar-content:after,
+#ced .navbar-content:after {
+  clear: both;
+}
+#ced .navigation-bar.fixed-top,
+#ced .navbar.fixed-top,
+#ced .navigation-bar.fixed-bottom,
+#ced .navbar.fixed-bottom {
+  position: fixed;
+  z-index: 1030;
+  left: 0;
+}
+#ced .navigation-bar.fixed-top,
+#ced .navbar.fixed-top {
+  top: 0;
+  bottom: auto;
+}
+#ced .navigation-bar.fixed-bottom,
+#ced .navbar.fixed-bottom {
+  bottom: 0;
+  top: auto;
+}
+
+
+#ced .navigation-bar.light {
+  background-color: #eeeeee;
+  color: #555555;
+  border-top: 1px solid #E0DBDB;
+  border-right: 1px solid #E0DBDB;
+  border-left: 1px solid #E0DBDB;
+}
+#ced .navigation-bar.light .element:hover,
+#ced .navigation-bar.light .element-menu > li:hover {
+  background-color: #999999;
+  color: #ffffff;
+}
+#ced .navigation-bar.light .pull-menu {
+  color: #1d1d1d;
+}
+
+#ced .header,
+#ced .subheader {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+}
+#ced .header {
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+}
+#ced .subheader {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+}
+#ced .subheader-secondary {
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #000000;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+}
+
+#ced .place-right {
+  float: right;
+}
+#ced .place-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#ced .place-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#ced .place-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#ced .place-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#ced .on-left {
+  margin-right: 5px;
+}
+#ced .on-right {
+  margin-left: 5px;
+}
+#ced .on-left-more {
+  margin-right: 10px;
+}
+#ced .on-right-more {
+  margin-left: 10px;
+}
+
+#search {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 80%;
+    height: 30px;
+    position: relative;
+    left: -10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        width: 100%;
+        float: Left;
+        margin-left: 0px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius:1px;
+    }
+
+
+.btn {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius:1px;
+}
+
+.hide-bullets {
+list-style:none;
+margin-left: -40px;
+margin-top:20px;
+}
+
+#main_area{
+  padding-top: 5px;
+}
+
+.section-title{
+  height: 40px;
+padding-top: 10px;
+color: #ffffff;
+background-color: rgba(126, 142, 179, 1) !important;
+padding-left: 10px;
+margin-bottom: 5px;
+font-family: "Segoe UI Light_","Open Sans Light",Verdana,Arial,Helvetica,sans-serif;
+font-weight: 300;
+letter-spacing: 0.01em;
+font-size: 2.2rem;
+line-height: 2.2rem;
+
+}
+
+
+#ced .listview-outlook {
+  position: relative;
+  display: block;
+}
+#ced .listview-outlook .list {
+  border: 4px transparent solid;
+  width: 300px;
+  height: auto;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  color: inherit;
+  margin: 0 0 10px 0;
+}
+#ced .listview-outlook .list .list-content {
+  padding: 10px;
+  position: relative;
+  display: block;
+  color: inherit;
+}
+#ced .listview-outlook .list .list-content:before,
+#ced .listview-outlook .list .list-content:after {
+  display: table;
+  content: "";
+}
+#ced .listview-outlook .list .list-content:after {
+  clear: both;
+}
+#ced .listview-outlook .list:hover {
+  outline: 3px #ccc solid;
+}
+#ced .listview-outlook .list:active {
+  outline: 3px #3e3e3e solid;
+}
+#ced .listview-outlook .list {
+  border: 1px #eaeaea solid;
+}
+#ced .listview-outlook .list .list-content .icon {
+  display: block;
+  width: 56px;
+  height: 56px;
+  font-size: 40px;
+  float: left;
+  margin-right: 10px;
+}
+#ced .listview-outlook .list .list-content [class*="icon-"].icon {
+  padding: 8px;
+}
+#ced .listview-outlook .list .list-content .data {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-left: 66px;
+  min-width: 200px;
+  position: relative;
+}
+#ced .listview-outlook .list .list-content .list-title,
+#ced .listview-outlook .list .list-content .list-remark {
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#ced .listview-outlook .list .list-content .list-title {
+  font-size: 14px;
+  line-height: 16px;
+}
+#ced .listview-outlook .list .list-content .list-remark {
+  font-size: 11px;
+  line-height: 12px;
+}
+#ced .listview-outlook .list .list-content [class*="span"] {
+  float: none;
+}
+#ced .listview-outlook .list .list-content .rating {
+  color: inherit;
+}
+#ced .listview-outlook .list .list-content .progress-bar {
+  margin: 5px 0;
+}
+#ced .listview-outlook.small .list-content .icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  line-height: 14px;
+  font-size: 28px;
+  float: left;
+  margin-right: 10px;
+}
+#ced .listview-outlook.small .list-content [class*="icon-"].icon {
+  padding: 8px 0;
+}
+#ced .listview-outlook.small .list-content [class*="icon-"].border {
+  font-size: 22px;
+  padding: 8px 4px;
+}
+#ced .listview-outlook.small .list-content .data {
+  margin-left: 40px;
+}
+#ced .listview-outlook .list.selected {
+  border: 4px #4390df solid;
+}
+#ced .listview-outlook .list.selected:after {
+  position: absolute;
+  display: block;
+  border-top: 28px solid #4390df;
+  border-left: 28px solid transparent;
+  right: 0;
+  content: "";
+  top: 0;
+  z-index: 101;
+}
+#ced .listview-outlook .list.selected:before {
+  position: absolute;
+  display: block;
+  content: "\e003";
+  color: #fff;
+  right: 0;
+  font-family: 'metroSysIcons';
+  font-size: 9pt;
+  font-weight: normal;
+  z-index: 102;
+  top: 0;
+}
+#ced .listview-outlook .list {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px #e1e1e1 solid;
+  padding: 2px 0;
+  color: #555555;
+  margin-bottom: 0;
+}
+#ced .listview-outlook .list .list-content {
+  margin: 2px 0;
+  padding: 2px 20px;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: inherit;
+  border-left: 3px transparent solid;
+}
+#ced .listview-outlook .list .list-content .list-title,
+#ced .listview-outlook .list .list-content .list-subtitle,
+#ced .listview-outlook .list .list-content .list-remark {
+  width: 100%;
+  display: block;
+  color: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#ced .listview-outlook .list .list-content .list-title {
+  font-size: 16px;
+  line-height: 22px;
+}
+#ced .listview-outlook .list .list-content .list-subtitle,
+#ced .listview-outlook .list .list-content .list-remark {
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 15px;
+  color: #1d1d1d;
+}
+#ced .listview-outlook .list .list-content .list-subtitle {
+  font-weight: bold;
+  color: #0067cb;
+}
+#ced .listview-outlook .list.marked .list-content {
+  border-left: 3px #0067b0 solid !important;
+}
+#ced .listview-outlook .list:active,
+#ced .listview-outlook .list:focus,
+#ced .listview-outlook .list.active {
+  background-color: #cde6f7 !important;
+  outline: 1px #999999 dotted;
+  color: #555555 !important;
+}
+#ced .listview-outlook .list:hover {
+  background-color: #e6f2fa;
+  outline: none;
+  text-decoration: none;
+}
+#ced .listview-outlook .list:hover .list-content {
+  border-left: 3px #b1d6f0 solid;
+}
+#ced .listview-outlook .list-group {
+  display: block;
+  position: relative;
+}
+#ced .listview-outlook .list-group .group-title {
+  display: block;
+  margin-bottom: 2px;
+  background-color: #f0f0f0;
+  padding: 4px 20px;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #333333;
+  padding-left: 24px;
+}
+#ced .listview-outlook .list-group .group-title:before {
+  position: absolute;
+  display: block;
+  left: 10px;
+  top: 1px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid black;
+}
+#ced .listview-outlook .list-group .group-content {
+  display: block;
+}
+#ced .listview-outlook .list-group.collapsed .group-title:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-left: -4px;
+}
+#ced .listview-outlook .list-group .group-title:hover:before {
+  border-bottom-color: #0067cb;
+}
+#ced .listview-outlook .list-content .list-icon {
+  float: left;
+  width: 48px;
+  max-height: 48px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.space {
+  padding: 5px;
+}
+.list-inline>li {
+    padding: 0 10px 0 0;
+}
+.container-pad {
+    padding: 30px 15px;
+}
+
+
+/**** MODULE ****/
+.bgc-fff {
+    background-color: #fff!important;
+}
+.box-shad {
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+    border: 1px solid #ededed;
+}
+
+/* Font changes */
+.fnt-smaller {
+    font-size: .9em;
+}
+.fnt-lighter {
+    color: #bbb;
+}
+
+/* Padding - Margins */
+.pad-10 {
+    padding: 10px!important;
+}
+.mrg-0 {
+    margin: 0!important;
+}
+.btm-mrg-10 {
+    margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+    margin-bottom: 20px!important;
+}
+.btm-mrg-5 {
+    margin-bottom: 5px!important;
+}
+
+/* Color  */
+.clr-535353 {
+    color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+    #property-listings .property-listing {
+        padding: 5px!important;
+    }
+    #property-listings .property-listing a {
+        margin: 0;
+    }
+    #property-listings .property-listing .media-body {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #property-listings .property-listing img {
+        max-width: 180px;
+    }
+}
+
+.glyphicon { margin-right:5px;}
+.section-box h3 { margin-top:0px; margin-bottom: 0px;}
+.section-box h3 a { font-size:15px; }
+.glyphicon-heart { color:#e74c3c;}
+.glyphicon-comment { color:#27ae60;}
+.separator { padding-right:5px;padding-left:5px; }
+.section-box hr {margin-top: 0;margin-bottom: 5px;border: 0;border-top: 1px solid rgb(199, 199, 199);}
+.section-box:last-child hr{
+    display: none;
+}
+
+    @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+    @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+    .event-list {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+  }
+  .event-list > li {
+
+  }
+  .event-list > li > time {
+    display: inline-block;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(197, 44, 102);
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .event-list > li:nth-child(even) > time {
+    background-color: rgb(165, 82, 167);
+  }
+  .event-list > li > time > span {
+    display: none;
+  }
+  .event-list > li > time > .day {
+    display: block;
+    font-size: 40pt;
+    font-weight: 100;
+    line-height: 1;
+  }
+  .event-list > li time > .month {
+    display: block;
+    font-size: 25pt;
+    font-weight: 900;
+    line-height: 1;
+  }
+.event-list > li time > .year {
+    display: block;
+    font-size: 20pt;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .event-list > li > img {
+    width: 100%;
+  }
+  .event-list > li > .info {
+    padding-top: 5px;
+    text-align: center;
+  }
+  .event-list > li > .info > .title {
+    font-size: 13pt;
+    font-weight: 700;
+    margin: 0px;
+  }
+  .event-list > li > .info > .desc {
+    font-size: 10pt;
+    font-weight: 300;
+    margin-top: 5px;
+  }
+  .event-list > li > .info > ul,
+  .event-list > li > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .event-list > li > .social > ul {
+    margin: 0px;
+  }
+  .event-list > li > .info > ul > li,
+  .event-list > li > .social > ul > li {
+    display: table-cell;
+    cursor: pointer;
+    color: rgb(30, 30, 30);
+    font-size: 11pt;
+    font-weight: 300;
+        padding: 3px 0px;
+  }
+    .event-list > li > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+  } 
+    .event-list > li > .social > ul > li {    
+        padding: 0px;
+    }
+    .event-list > li > .social > ul > li > a {
+        padding: 3px 0px;
+  } 
+
+  @media (min-width: 768px) {
+    .event-list > li {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 120px;
+      padding: 0px;
+    }
+    .event-list > li > time,
+    .event-list > li > img  {
+      display: inline-block;
+    }
+    .event-list > li > time,
+    .event-list > li > img {
+      width: 120px;
+      float: left;
+    }
+    .event-list > li > .info {
+      overflow: hidden;
+    }
+    .event-list > li > time,
+    .event-list > li > img {
+      width: 120px;
+      height: 120px;
+      padding: 0px;
+      margin: 0px;
+    }
+    .event-list > li > .info {
+      position: relative;
+      height: 120px;
+      text-align: left;
+      padding-right: 40px;
+    } 
+    .event-list > li > .info > .title, 
+    .event-list > li > .info > .desc {
+      padding: 0px 10px;
+    }
+    .event-list > li > .info > ul {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+    }
+    .event-list > li > .social {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: block;
+      width: 40px;
+    }
+        .event-list > li > .social > ul {
+            border-left: 1px solid rgb(230, 230, 230);
+        }
+    .event-list > li > .social > ul > li {      
+      display: block;
+            padding: 0px;
+    }
+    .event-list > li > .social > ul > li > a {
+      display: block;
+      width: 40px;
+      padding: 10px 0px 9px;
+    }
+  }
+
+.read-more {
+    font-size: small;
+    margin-top: -22px;
+    margin-right: -27px;
+    text-align: right;
+    padding-right: 8%;
+}
+
+.read-more a{
+    color: #ffffff;
+}
+
+.read-more a:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+.breadcrumb {
+    background-color: #F5F7FA;
+    border-bottom: 1px solid #E0DBDB;
+    border-right: 1px solid #E0DBDB;
+    border-left: 1px solid #E0DBDB;
+}
+
+.breadcrumb > li + li:before {
+    color: #CCD1D9;
+}
+
+.breadcrumb > .active {
+    color: #AAB2BD;
+}
+
+.breadcrumb.sm {
+    padding: 8px 10px;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.breadcrumb.lg {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.breadcrumb.square {
+    border-radius: 0px;
+}
+
+.breadcrumb.rsaquo > li + li:before {
+    font-family: "Glyphicons Halflings";
+    content: "\e080";
+    font-size: 5pt;
+    color: lightgray;
+}
+
+.breadcrumb.primary a, .breadcrumb.success a, .breadcrumb.info a, .breadcrumb.danger a, .breadcrumb.warning a, .breadcrumb.dark a {
+    color: #fff;
+}
+
+.breadcrumb.primary > .active, .breadcrumb.success > .active, .breadcrumb.info > .active, .breadcrumb.danger > .active, .breadcrumb.warning > .active, .breadcrumb.dark > .active {
+    color: #fff;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb.primary > li + li:before, .breadcrumb.success > li + li:before, .breadcrumb.info > li + li:before, .breadcrumb.danger > li + li:before, .breadcrumb.warning > li + li:before, .breadcrumb.dark > li + li:before {
+    color: #F5F7FA;
+}
+
+.breadcrumb.default {
+    background-color: #fff;
+}
+
+.breadcrumb.primary {
+    background-color: #37BC9B;
+}
+
+.breadcrumb.success {
+    background-color: #8CC152;
+}
+
+.breadcrumb.info {
+    background-color: #3BAFDA;
+}
+
+.breadcrumb.danger {
+    background-color: #E9573F;
+}
+
+.breadcrumb.warning {
+    background-color: #F6BB42;
+}
+
+.breadcrumb.dark {
+    background-color: #434A54;
+}
+
+
+/** -------------------- Listing of projects and research areas -- **/
+
+/**** LAYOUT ****/
+.list-inline>li {
+    padding: 0 10px 0 0;
+}
+.container-pad {
+    padding: 30px 15px;
+}
+
+
+/**** MODULE ****/
+.bgc-fff {
+    background-color: #fff!important;
+}
+.box-shad {
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+    border: 1px solid #ededed;
+}
+
+/* Font changes */
+.fnt-smaller {
+    font-size: .9em;
+}
+.fnt-lighter {
+    color: #bbb;
+}
+
+/* Padding - Margins */
+.pad-10 {
+    padding: 10px!important;
+}
+.mrg-0 {
+    margin: 0!important;
+}
+.btm-mrg-10 {
+    margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+    margin-bottom: 20px!important;
+}
+
+/* Color  */
+.clr-535353 {
+    color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+    #property-listings .property-listing {
+        padding: 5px!important;
+    }
+    #property-listings .property-listing a {
+        margin: 0;
+    }
+    #property-listings .property-listing .media-body {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #property-listings .property-listing img {
+        max-width: 180px !important;
+        max-height: 120px;
+    }
+}
+
+
+.attached-projects-title{
+    font-size: 15pt;
+    border-bottom: 1px solid lightgray;
+    margin: 13px;
+    padding-bottom: 5px;
+}
+
+.error-color{
+    color: red;
+}
+
+

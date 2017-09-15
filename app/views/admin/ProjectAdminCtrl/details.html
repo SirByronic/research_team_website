@@ -1,0 +1,95 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Projects Administration' /}
+#{set active: 'projects' /}
+#{set 'moreScripts'}
+<script>
+    $(document).ready(function() {
+        $("#error-msg").css("display","none");
+    });
+</script>
+<script type="text/javascript">
+    function deleteProject(idProject){
+        var deleteRoute = #{jsRoute @admin.ProjectAdminCtrl.delete(':id') /};
+        $.ajax({
+            url: deleteRoute.url({id: idProject}),
+            type: deleteRoute.method,
+            success: function (data, textStatus, jqXHR) {
+                if(data.status == "success"){
+                    window.location.replace(#{jsRoute @admin.ResearchAreaAdminCtrl.index() /}.url());
+                }else if(data.status == "error"){
+                    $("#error-msg").append("<p>"+data.error_msg+"</p>")
+                    $("#error-msg").css("display","block");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+    }
+
+</script>
+#{/set}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">${project.name}</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div  id="error-msg" class="alert alert-danger" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">
+
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        #{ifnot project.imgURL == null}
+                        <div class="col-md-4" style="border-right: 1px solid lightgray">
+                            <img class="img-responsive"
+                                 src="${project.imgURL}"
+                                 alt="${project.name}" />
+
+                            <table class="table table-condensed table-responsive table-user-information">
+                                <tr>
+                                    <td>Organisation</td>
+                                    <td>${project.organisation}</td>
+                                </tr>
+                                <tr>
+                                    <td>Partnership</td>
+                                    <td>${project.partnership}</td>
+                                </tr>
+                                <tr>
+                                    <td>Start date</td>
+                                    <td>${project.startDate.format("yyyy-MM-dd")}</td>
+                                </tr>
+                                <tr>
+                                    <td>Finish Date</td>
+                                    <td>${project.finishDate.format("yyyy-MM-dd")}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        #{/ifnot}
+                        <div class="col-md-8">
+                            <p>
+                                #{verbatim }
+                                   ${project.description}
+                                #{/verbatim}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer" style="text-align: right">
+                    <a  href="@{admin.ProjectAdminCtrl.edit(project.id)}" type="button" class="btn btn-outline btn-info">Edit</a>
+                    <button type="submit" class="bt_delete btn btn-outline btn-danger" onclick="deleteProject(${project.id})">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

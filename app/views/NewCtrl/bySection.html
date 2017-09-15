@@ -1,0 +1,71 @@
+
+#{extends 'main.html' /}
+#{set title:'MODEC Team - Research Areas' /}
+#{set active:'new' /}
+#{set 'moreStyles'}
+   #{stylesheet 'news.css' /}
+#{/set}
+
+
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="@{Application.index()}">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+        <a href="@{NewCtrl.index()}">
+            News
+        </a>
+    </li>
+    <li>
+        ${selectedSection.name}
+    </li>
+</ol>
+
+<div id="blog" class="row">
+    <div class="col-sm-2 paddingTop20">
+        <nav class="nav-sidebar">
+            <ul class="nav">
+                <li>By Section</li>
+                <li class="nav-divider"></li>
+                <li><a href="@{NewCtrl.index()}"><span class="glyphicon glyphicon-th-list"></span> All News</a></li>
+                #{list items:sections , as:'section'}
+                    #{if section.name == selectedSection.name}
+                        <li class="active"><a href="@{NewCtrl.bySection(section.id)}">${section.name}</a></li>
+                    #{/if}
+                    #{else }
+                        <li><a href="@{NewCtrl.bySection(section.id)}">${section.name}</a></li>
+                    #{/else}
+
+                #{/list}
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-10 blogShort">
+                <div class="row">
+                #{list items:selectedSection.news , as:'_new'}
+                    <div class="col-md-12 news-content">
+                        <div class="row">
+                            #{if _new.imgURL != null}
+                                <div class="col-lg-4">
+                                    <img src="${_new.imgURL}" alt="${_new.title} image" class="img-responsive"/>
+                                </div>
+                            #{/if}
+                            <div class="col-lg-8">
+                                <h4><a href="@{NewCtrl.details(_new.id)}">${_new.title}</a></h4>
+                                <p>
+                                    #{verbatim }${_new.summary}#{/verbatim}
+                                </p>
+                                <p>
+                                    <span class="badge">Posted ${_new.datePublication.format("dd/MM/yyyy")}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                #{/list}
+          </div>
+    </div>
+</div>

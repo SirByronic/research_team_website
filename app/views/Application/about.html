@@ -1,0 +1,47 @@
+#{extends 'main.html' /}
+#{set title:'MODEC Team' /}
+#{set active:'about' /}
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="./">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+         About the team
+    </li>
+</ol>
+
+
+<div id="main_area">
+        <div class="row">
+        <div class="col-xs-12">
+        <div class="row">
+            <div class="col-sm-3" style="padding-top: 10px">
+              <nav class="nav-sidebar">
+                <ul class="nav admin-menu">
+                    <li class="active"><a href="#" data-target-id="overview">Overview</a></li>
+                    <li><a  data-target-id="highlights"><i class="fa fa-list-alt fa-fw"></i>Highlights</a></li>
+                    <li><a  data-target-id="projects"><i class="fa fa-file-o fa-fw"></i>Projects and Research Areas</a></li>
+                    <li><a  data-target-id="cooperation"><i class="fa fa-bar-chart-o fa-fw"></i>Cooperation</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-9 admin-content" id="overview">
+               #{verbatim } ${about.overview} #{/verbatim}
+            </div>
+            <div class="col-sm-9 admin-content" id="highlights">
+               #{verbatim } ${about.highlights} #{/verbatim}
+            </div>
+            <div class="col-sm-9 admin-content" id="projects">
+               #{verbatim }${about.projectsAndResearch}#{/verbatim}
+            </div>
+            <div class="col-sm-9 admin-content" id="cooperation">
+                #{verbatim }${about.cooperation}#{/verbatim}
+            </div>
+
+        </div>
+            </div>
+            </div>
+       </div>

@@ -1,0 +1,30 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Project(SmartCities):
+  name: Smart Cities
+  goals: Create systems to improve the style of life in cities
+  applicationFields: Computer Science; Electrical Engineering; Mechanical Engineering; Embedded Systems
+  description: This project aims to create intelligent systems to improve the lifestyle in cities; starting with the smart grid systems to a improve the distribution of electricity, an intelligent management system of transport and traffic management.
+  organisation: CNRST
+  partnership: CNRST; ENSEM; ENSAM; ENSIAS
+  researchArea: BigData
+  startDate: 2014-11-01
+  finishDate: 2015-11-01
+  members: [hichamBEHJA, moukhtarZEMMOURI, saidAAZZOU]
+  imgURL: http://m.c.lnkd.licdn.com/mpr/mpr/p/5/005/081/031/06f167d.jpg
+  imgID: dddaazazazazaz
+
+Project(AutomaticOntology):
+  name: Automtic Ontology
+  goals: Create systems to automaticaly extract knowledge in the WEB
+  applicationFields: Computer Science; Cloud Computing
+  description: This project aims to create a systems to automaticly generate knowledge from ontologies in the World Wide Webd
+  organisation: University Hassan II
+  partnership: ENSAM
+  researchArea: WebSemantic
+  startDate: 2015-01-01
+  finishDate: 2016-01-01
+  members: [hichamBEHJA, moukhtarZEMMOURI]
+  imgURL: http://blogs.bmj.com/bmj-journals-development-blog/files/2010/12/semantic-web.jpg
+  imgID: dzsdsdsdssddsds

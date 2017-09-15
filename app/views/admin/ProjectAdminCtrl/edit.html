@@ -1,0 +1,126 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Projects Administration' /}
+#{set active: 'projects' /}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">Add new project</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+        #{form @update(), enctype :'multipart/form-data', method:'post'}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="hidden" value="${project.id}" name="project.id"/>
+                            <div class="form-group">
+                                <label>Project name</label>
+                                <input class="form-control" name="project.name"  value="${project.name}" />
+                                <span class="help-block error-color">#{error 'project.name'/}</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Organisation</label>
+                                        <input class="form-control" name="project.organisation"  value="${project.organisation}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Partnership</label>
+                                        <input class="form-control" name="project.partnership" value="${project.partnership}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Photo</label>
+                                        <div class="btn btn-default btn-file" style="display:block">
+                                            <span class="glyphicon glyphicon-folder-open"></span>
+                                            &nbsp; Add photo <input type="file" class="form-control" name="img">
+                                            <span id="selectedFile"></span>
+                                        </div>
+                                        <span class="help-block">If you want to replace the old picture, upload a new one.</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Attached Research Area</label>
+                                        #{select 'researchAreaId',
+                                        items:researchAreas,
+                                        valueProperty:'id',
+                                        labelProperty:'name',
+                                        class:'form-control' /}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Start date</label>
+                                        <input class="form-control" name="project.startDate" value="${project.startDate}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Finish date</label>
+                                        <input class="form-control" name="project.finishDate" value="${project.finishDate}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Attached Researchers</label>
+                                        #{select 'memberIds',
+                                        items:members,
+                                        multiple:'multiple',
+                                        size: '5',
+                                        valueProperty:'id',
+                                        labelProperty:'fullName',
+                                        class:'form-control' /}
+                                        <span class="help-block">Select the attached reserchers</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control" name="project.description" rows="5" id="description-txt">
+                                    #{verbatim }
+                                            ${project.description}
+                                        #{/verbatim}
+                                </textarea>
+                                <span class="help-block error-color">#{error 'project.description'/}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer" style="text-align: right">
+                    <button type="submit" class="btn btn-outline btn-info">Save change</button>
+                </div>
+            </div>
+        #{/form}
+        </div>
+    </div>
+</div>
+
+#{set 'moreStyles'}
+    #{stylesheet '../font-awesome/css/font-awesome.min.css'/}
+    #{stylesheet 'summernote.css'/}
+#{/set}
+#{set 'moreScripts'}
+    #{script 'summernote.min.js'/}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#description-txt').summernote({
+            height: 300
+        });
+    });
+    $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+
+    $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+        $("#selectedFile").append("> " + label)
+    });
+</script>
+#{/set}

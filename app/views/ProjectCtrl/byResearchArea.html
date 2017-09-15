@@ -1,0 +1,58 @@
+#{extends 'main.html' /}
+#{set title:'MODEC Team - Projects' /}
+#{set active:'project' /}
+
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="@{Application.index()}">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+        <a href="@{ProjectCtrl.index()}">Projects</a>
+    </li>
+    <li>
+        ${selectedResearchArea.name}
+    </li>
+</ol>
+
+<div class="row">
+    <div class="col-lg-3">
+        <nav class="nav-sidebar">
+            <ul class="nav">
+                <li>By Research Area</li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a href="@{ProjectCtrl.index()}"><span class="glyphicon glyphicon-th-list">
+                        </span> All</a>
+                </li>
+            #{list items:researchAreas , as:'researchArea'}
+                #{if selectedResearchArea.name.equals(researchArea.name)}
+                    <li class="active"><a href="@{ProjectCtrl.byResearchArea(researchArea.id)}">${researchArea.name}</a></li>
+                #{/if}
+                #{else }
+                    <li><a href="@{ProjectCtrl.byResearchArea(researchArea.id)}">${researchArea.name}</a></li>
+                #{/else}
+
+            #{/list}
+            </ul>
+        </nav>
+    </div>
+    <div class="col-lg-9">
+    #{list items:projects , as:'project'}
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="${project.imgURL}" alt="${project.name} image" class="img-responsive" />
+                </div>
+                <div class="panel-footer">
+                    <a class="btn btn-outline btn-default btn-block" href="@{ProjectCtrl.details(project.id)}">
+                    ${project.name}
+                    </a>
+                </div>
+            </div>
+        </div>
+    #{/list}
+    </div>
+</div>

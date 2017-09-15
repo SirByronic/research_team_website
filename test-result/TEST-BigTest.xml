@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="1.967" errors="0" skipped="0" tests="1" name="BigTest">
+  <testcase classname="BigTest" name="process" time="1.967">
+      </testcase>
+</testsuite>

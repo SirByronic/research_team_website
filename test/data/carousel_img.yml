@@ -1,0 +1,14 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+CarouselImg(webSemanticImg):
+  name: Web semantic
+  url: http://localhost:9000/public/images/semantic.png
+  active: true
+
+
+CarouselImg(BigDataImg):
+  name: Big data
+  url: http://d2z6avstustc5t.cloudfront.net/blog/wp-content/uploads/2013/11/big_data_big_time.jpg
+  active: true
+

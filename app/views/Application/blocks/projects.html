@@ -1,0 +1,18 @@
+<div class="section-title">
+    Projects
+    <div class="read-more">
+        <a href="@{ProjectCtrl.index()}">
+        <span class="glyphicon glyphicon-chevron-right"></span>Read more</a>
+    </div>
+</div>
+#{list items:projects , as:'project'}
+                        <div class="col-md-12 section-box">
+                            <h5 style="margin-bottom: -2px">
+                                <a href="@{ProjectCtrl.details(project.id)}">${ project.name }</a>
+                            </h5>
+  		<span class="fnt-smaller fnt-lighter fnt-arial">
+  		     ${ project.organisation }
+  		</span>
+                        </div>
+<!-- End Listing-->
+#{/list}

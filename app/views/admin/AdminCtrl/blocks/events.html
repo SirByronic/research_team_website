@@ -1,0 +1,16 @@
+<div class="list-group">
+    <div class="list-group-item header">
+        <span class="glyphicon glyphicon-calendar"></span> Events
+    </div>
+#{list items:lastEvents, as:'event'}
+    <a href="@{admin.EventAdminCtrl.details(event.id)}" class="list-group-item">
+    ${event.title}
+    </a>
+#{/list}
+*{    <div class="list-group-item">
+        <a href="@{admin.EventAdminCtrl.index()}"
+           class="btn btn-outline btn-default btn-block" style="margin-top: -5px">
+            All Events
+        </a>
+    </div>}*
+</div>

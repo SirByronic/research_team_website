@@ -1,0 +1,7 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+# Error of validation
+validation.required=Champs obligatoire
+validation.email=Le champs doit être un E-mail valid

@@ -1,0 +1,74 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Researchers Administration' /}
+#{set active: 'publications' /}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">Add new publication</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            #{form @add(), method:'post'}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input class="form-control" name="publication.title" value="${flash['publication.title']}" />
+                                            <span class="help-block error-color">#{error 'publication.title'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Journal name</label>
+                                            <input class="form-control" name="publication.journal" value="${flash['publication.journal']}" />
+                                            <span class="help-block error-color">#{error 'publication.journal'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Journal specific title</label>
+                                            <input class="form-control" name="publication.journalSpecificTitle" value="${flash['publication.journalSpecificTitle']}" />
+                                            <span class="help-block error-color">#{error 'publication.journalSpecificTitle'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pages range</label>
+                                            <input class="form-control" name="publication.pagesRange"  value="${flash['publication.pagesRange']}" />
+                                            <span class="help-block error-color">#{error 'publication.pagesRange'/}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Publication date</label>
+                                            <input class="form-control" name="publication.datePublication"  value="${flash['publication.datePublication']}" />
+                                            <span class="help-block error-color">#{error 'publication.datePublication'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Donwload Link</label>
+                                            <input class="form-control" name="publication.url"  value="${flash['publication.url']}" />
+                                            <span class="help-block error-color">#{error 'publication.url'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Attached Researchers</label>
+                                        #{select 'memberIds',
+                                        items:members,
+                                        multiple:'multiple',
+                                        size: '5',
+                                        valueProperty:'id',
+                                        labelProperty:'fullName',
+                                        class:'form-control' /}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                        <div class="panel-footer" style="text-align: right">
+                            <button type="submit" class="btn btn-outline btn-info">Save change</button>
+                        </div>
+                    </div>
+            #{/form}
+        </div>
+    </div>
+</div>

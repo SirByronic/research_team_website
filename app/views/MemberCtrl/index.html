@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'MODEC Team - Researchers' /}
+#{set active:'researcher' /}
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="@{Application.index()}">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+        Researchers
+    </li>
+</ol>
+        <div class="row">
+        <div class="col-lg-3">
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                    <li>Categories</li>
+                    <li class="nav-divider"></li>
+                    <li class="active">
+                        <a href="@{MemberCtrl.index()}"><span class="glyphicon glyphicon-th-list">
+                        </span> All</a>
+                    </li>
+                #{list items:categories , as:'category'}
+                    <li><a href="@{MemberCtrl.byCategory(category.id)}">${category.name}</a></li>
+                #{/list}
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-9">
+        #{list items:members , as:'member'}
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img class="img-circle img-responsive"
+                                     src="${member.photoURL}"
+                                     alt="${member.fullName} Photo">
+                            </div>
+                            <div class="col-lg-8">
+                                <h4><a href="@{MemberCtrl.details(member.id)}">${member.fullName}</a></h4>
+                                <p class="fnt-smaller fnt-arial">
+                                <ul style="list-style-type: none; padding: 0px; margin: 0px">
+                                    <li>${member.institution}</li>
+                                    <li>${member.joinDate.format("dd/MM/yyyy")}</li>
+                                    <li>${member.category.name}</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        #{/list}
+      </div>
+ </div>
+
+

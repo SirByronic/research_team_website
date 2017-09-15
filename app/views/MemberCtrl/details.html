@@ -1,0 +1,82 @@
+#{extends 'main.html' /}
+#{set title:'MODEC Team - Researchers' /}
+#{set active:'researcher' /}
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="@{Application.index()}">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+        <a href="@{MemberCtrl.index()}">
+        Researchers
+        </a>
+    </li>
+    <li>
+        ${member.fullName}
+    </li>
+</ol>
+<!-- Add data-for class to this row -->
+<div class="row user-infos">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">${member.fullName}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="img-circle img-responsive"
+                             src="${member.photoURL}"
+                             alt="${member.fullName} Profil Picture">
+                    </div>
+                    <div class="col-md-4">
+                        <table class="table table-condensed table-responsive table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>Institution</td>
+                                <td>${member.institution}</td>
+                            </tr>
+                            <tr>
+                                <td>E-mail</td>
+                                <td><a href="mailto:${member.email}">${member.email}</a></td>
+                            </tr>
+                            <tr>
+                                <td>Join date</td>
+                                <td>${member.joinDate.format("yyyy-MM-dd")}</td>
+                            </tr>
+                            #{ifnot member.telephone.trim().equals("") }
+                            <tr>
+                                <td>Telephone</td>
+                                <td>${member.telephone}</td>
+                            </tr>
+                            #{/ifnot}
+
+                            #{ifnot member.fax.trim().equals("")}
+                            <tr>
+                                <td>Fax</td>
+                                <td>${member.fax}</td>
+                            </tr>
+                            #{/ifnot}
+                            #{ifnot member.url.trim().equals("")}
+                            <tr>
+                                <td>Personal Website</td>
+                                <td><a href="${member.url}" target="_blank">${member.url}</a></td>
+                            </tr>
+                            #{/ifnot}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6" style="border-left: 1px solid lightgray">
+                    #{verbatim }
+                             ${member.presentation}
+                    #{/verbatim}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Researchers Administration' /}
+#{set active: 'news' /}
+
+#{set 'moreScripts'}
+<script>
+    $(document).ready(function() {
+        $("#error-msg").hide();
+    });
+</script>
+<script type="text/javascript">
+    function deleteSection(idSection){
+        var deleteRoute = #{jsRoute @admin.NewAdminCtrl.deleteSection(':id') /};
+        $.ajax({
+            url: deleteRoute.url({id: idSection}),
+            type: deleteRoute.method,
+            success: function (data, textStatus, jqXHR) {
+                if(data.status == "success"){
+                    window.location.replace(#{jsRoute @admin.NewAdminCtrl.index() /}.url());
+                }else if(data.status == "error"){
+                    $("#error-msg").append("<p>"+data.error_msg+"</p>")
+                    $("#error-msg").show();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+    }
+
+</script>
+#{/set}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">${section.name}</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div  id="error-msg" class="alert alert-danger" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <form method="POST" action="@{admin.NewAdminCtrl.updateSection}">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="hidden" value="${section.id}" name="section.id" />
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" name="section.name"  value="${section.name}"/>
+                                    <span class="help-block error-color">#{error 'section.name'/}</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input class="form-control" name="section.description"  value="${section.description}" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer" style="text-align: right">
+                        <button type="submit" class="btn btn-primary">Save change</button>
+                        <a onclick="deleteSection(${section.id})" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

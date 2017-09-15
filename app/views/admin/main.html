@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>#{get 'title' /}</title>
+    <meta charset="${_response_encoding}">
+#{stylesheet 'bootstrap.min.css'/}
+#{stylesheet 'admin.css'/}
+#{stylesheet '../font-awesome/css/font-awesome.min.css'/}
+#{get 'moreStyles' /}
+    <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+</head>
+<body>
+<div id="wrapper">
+#{include './header.html'/}
+#{doLayout /}
+</div>
+
+#{script 'jquery-1.11.0.js'/}
+#{script 'bootstrap.min.js'/}
+#{script 'admin.js'/}
+#{get 'moreScripts' /}
+</body>
+</html>

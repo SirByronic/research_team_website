@@ -1,0 +1,23 @@
+<div class="section-title">
+    Publications
+    <div class="read-more">
+        <a href="@{PublicationCtrl.index()}"> <span class="glyphicon glyphicon-chevron-right"></span>Read more</a>
+    </div>
+</div>
+<div class="row">
+#{list items:publications , as:'publication'}
+    <div class="col-md-12 section-box">
+        <h5>
+            ${publication.title}
+        </h5>
+  				<span class="fnt-smaller fnt-lighter fnt-arial">
+  					On ${ publication.datePublication.format("yyyy-MM-dd") } by
+                    #{list items:publication.members, as:'member'}
+                        <a href="@{MemberCtrl.details(member.id)}">${member.fullName}</a> &nbsp;
+                    #{/list}
+  				</span>
+        <p></p>
+        <hr>
+    </div>
+#{/list}
+</div>

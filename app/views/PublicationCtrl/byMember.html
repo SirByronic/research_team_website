@@ -1,0 +1,71 @@
+#{extends 'main.html' /}
+#{set title:'MODEC Team - Publications' /}
+#{set active:'publication' /}
+
+#{set 'moreStyles'}
+    #{stylesheet 'news.css' /}
+#{/set}
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="@{Application.index()}">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+        <a href="@{PublicationCtrl.index()}">
+        Publications
+        </a>
+    </li>
+    <li>
+        ${selectedMember.fullName}
+    </li>
+</ol>
+
+
+
+<div class="row">
+    <div class="col-sm-3 paddingTop20">
+        <nav class="nav-sidebar">
+            <ul class="nav">
+                <li>By Researcher</li>
+                <li class="nav-divider"></li>
+                <li><a href="@{PublicationCtrl.index()}"><span class="glyphicon glyphicon-th-list"></span> All Publications</a></li>
+            #{list items:members , as:'member'}
+                 #{if selectedMember.fullName == member.fullName}
+                     <li class="active"><a href="@{PublicationCtrl.byMember(member.id)}">${member.fullName}</a></li>
+                 #{/if}
+                 #{else }
+                     <li><a href="@{PublicationCtrl.byMember(member.id)}">${member.fullName}</a></li>
+                 #{/else}
+
+            #{/list}
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-9 section-box">
+        <div class="row">
+        #{list items:selectedMember.publications , as:'publication'}
+                <div class="col-md-12">
+                    <h4>
+                        <a href="${publication.url}" class="post-title">
+                        ${publication.title}
+                        </a>
+                    </h4>
+                    <p>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    ${publication.datePublication.format("dd/MM/yyyy")} |
+                        <span class="glyphicon glyphicon-user"></span>Researchers :
+                        #{list items:publication.members , as:'member'}
+                            <a href="@{MemberCtrl.details(member.id)}">${member.fullName}</a>
+                        #{/list}
+                    </p>
+                    <p>
+                        Published in <strong>${publication.journal}, ${publication.journalSpecificTitle}</strong>, pp. ${publication.pagesRange}
+                    </p>
+                </div>
+        #{/list}
+        </div>
+    </div>
+
+</div>

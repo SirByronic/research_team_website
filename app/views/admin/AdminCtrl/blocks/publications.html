@@ -1,0 +1,16 @@
+<div class="list-group">
+    <div class="list-group-item header"*{}*>
+        <span class="glyphicon glyphicon-file"></span> Publications
+    </div>
+#{list items:lastPublications, as:'publication'}
+    <a href="@{admin.PublicationAdminCtrl.details(publication.id)}" class="list-group-item">
+    ${publication.title}
+    </a>
+#{/list}
+*{    <div class="list-group-item">
+        <a href="@{admin.PublicationAdminCtrl.index()}"
+           class="btn btn-outline btn-default btn-block" style="margin-top: -5px">
+            All Publications
+        </a>
+    </div>}*
+</div>

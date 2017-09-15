@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-heading home-panel">
+        Researchers
+        <div class="pull-right">
+            <div class="btn-group">
+                <a href="@{MemberCtrl.index()}" class="btn btn-default btn-xs">
+                    More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="news-section">
+        #{list items:members , as:'member'}
+            <div class="content">
+                <h5><a href="@{MemberCtrl.details(member.id)}">${member.fullName}</a></h5>
+                <p class="small">${member.institution}</p>
+            </div>
+           #{/list}
+        </div>
+    </div>
+</div>

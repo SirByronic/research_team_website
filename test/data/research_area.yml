@@ -1,0 +1,20 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+ResearchArea(WebSemantic):
+  name: Web Semantic
+  description: The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries. The term was coined by Tim Berners-Lee for a web of data that can be processed by machines.
+  imgURL: http://www.anthedesign.fr/wp-content/uploads/2013/04/web-semantic.png
+  imgID: sfqfsssss
+
+ResearchArea(DataMining):
+  name: Data Mining
+  description: an interdisciplinary subfield of computer science, is the computational process of discovering patterns in large data sets involving methods at the intersection of artificial intelligence, machine learning, statistics, and database systems.
+  imgURL: http://cdn.colocationameric1.netdna-cdn.com/picts/blog/data-mining.jpg
+  imgID: sqdqsdqsdsqdsqd
+
+ResearchArea(BigData):
+  name: Big Data
+  description: Big data is an all-encompassing term for any collection of data sets so large and complex that it becomes difficult to process using traditional data processing applications.
+  imgURL: http://www.pole-scs.org/sites/www.pole-scs.org/files/images/actualites/pole/big-data-291113021652.png
+  imgID: fdsgdsgdsgfdgsd

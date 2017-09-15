@@ -1,0 +1,64 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="@{admin.AdminCtrl.index()}">WUMedia Administration</a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            </li>
+    </ul>
+        <!-- /.dropdown-user -->
+
+    <!-- /.navbar-header -->
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a id="dashboard" href="@{admin.AdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-th-large"></span>
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a id="researchers" href="@{admin.MemberAdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Researchers</a>
+                </li>
+                <li>
+                    <a id="projects" href="@{admin.ResearchAreaAdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-briefcase"></span>
+                        Projects</a>
+                </li>
+                <li>
+                    <a id="publications" href="@{admin.PublicationAdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-file"></span>
+                        Publications</a>
+                </li>
+                <li>
+                    <a id="news" href="@{admin.NewAdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        News</a>
+                </li>
+*{                <li>
+                    <a id="events" href="@{admin.EventAdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        Events</a>
+                </li>}*
+                <li>
+                    <a id="about" href="@{admin.AboutAdminCtrl.index()}">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        About</a>
+                </li>
+*{                <li>
+                    <a id="dashboard" href="@{admin.CarouselImgCtrl.index()}">
+                        <span class="glyphicon glyphicon-picture"></span>
+                        Images</a>
+                </li>}*
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
+<div id="active-menu" style="display: none">#{get 'active' /}</div>

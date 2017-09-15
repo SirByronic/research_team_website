@@ -1,0 +1,20 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Publication(BigDataApplication):
+  title: Big Data application for smart cities
+  datePublication: 2014-12-01
+  journal: IEEE Journal
+  journalSpecificTitle: Big data special edition
+  pagesRange: 14-18
+  url: http://www.lienVersPDF.com/file.pdf
+  members: [hichamBEHJA, moukhtarZEMMOURI, saidAAZZOU]
+
+Publication(WebSemanticOntology):
+  title: Automatic extraction of knowledge using ontology in WEB 2.0
+  datePublication: 2015-02-01
+  journal: W3C Journal
+  journalSpecificTitle: Web Semantic for search engine
+  pagesRange: 10-15
+  url: http://www.lienVersPDFOntology.com/file2.pdf
+  members: [hichamBEHJA, moukhtarZEMMOURI]

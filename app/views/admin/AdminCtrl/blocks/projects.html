@@ -1,0 +1,16 @@
+<div class="list-group">
+    <div class="list-group-item header">
+        <span class="glyphicon glyphicon-screenshot"></span> Projects
+    </div>
+#{list items:lastProjects, as:'project'}
+    <a href="@{admin.ProjectAdminCtrl.details(project.id)}" class="list-group-item">
+    ${project.name}
+    </a>
+#{/list}
+*{    <div class="list-group-item">
+        <a href="@{admin.ResearchAreaAdminCtrl.index()}"
+           class="btn btn-outline btn-default btn-block" style="margin-top: -5px">
+            All Projects
+        </a>
+    </div>}*
+</div>

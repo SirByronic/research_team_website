@@ -1,0 +1,11 @@
+<div class="list-group">
+    <div class="list-group-item header" >
+        <span class="glyphicon glyphicon-user"></span> Researchers
+    </div>
+    #{list items:lastMembers, as:'member'}
+    <a href="@{admin.MemberAdminCtrl.details(member.id)}" class="list-group-item">
+       ${member.fullName}
+    </a>
+    #{/list}
+</div>
+

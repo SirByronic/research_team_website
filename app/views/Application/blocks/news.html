@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+    <div class="panel-heading home-panel">
+        Last News
+        <div class="pull-right">
+            <div class="btn-group">
+                <a href="@{NewCtrl.index()}" class="btn btn-default btn-xs">
+                    More
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="news-section">
+        #{list items:news , as:'_new'}
+            <div class="content">
+                <h5><a href="@{NewCtrl.details(_new.id)}">${_new.title}</a></h5>
+                <p class="small">${ _new.datePublication.format("dd/MM/yyyy") }</p>
+            </div>
+         #{/list}
+        </div>
+    </div>
+</div>

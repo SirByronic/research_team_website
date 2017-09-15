@@ -1,0 +1,101 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Publications Administration' /}
+#{set active: 'publications' /}
+#{set 'moreScripts'}
+<script>
+    $(document).ready(function() {
+        $("#error-msg").css("display","none");
+    });
+</script>
+<script type="text/javascript">
+    function deletePublication(idPublication){
+        var deleteRoute = #{jsRoute @admin.PublicationAdminCtrl.delete(':id') /};
+        $.ajax({
+            url: deleteRoute.url({id: idPublication}),
+            type: deleteRoute.method,
+            success: function (data, textStatus, jqXHR) {
+                if(data.status == "success"){
+                    window.location.replace(#{jsRoute @admin.PublicationAdminCtrl.index() /}.url());
+                }else if(data.status == "error"){
+                    $("#error-msg").append("<p>"+data.error_msg+"</p>")
+                    $("#error-msg").css("display","block");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+    }
+
+</script>
+#{/set}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">${publication.title}</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div  id="error-msg" class="alert alert-danger" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-condensed table-responsive table-user-information">
+                                <tbody>
+                                <tr>
+                                    <td><strong>Journal title</strong></td>
+                                    <td>${publication.journal}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Edition title</strong></td>
+                                    <td>${publication.journalSpecificTitle}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Publication date</strong></td>
+                                    <td>${publication.datePublication}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pages range</strong></td>
+                                    <td>${publication.pagesRange}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Download URL</strong></td>
+                                    <td>
+                                        <a href="${publication.url}">
+                                            ${publication.url}
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Attached Reseachers</strong></td>
+                                    <td>
+                                    #{list items:publication.members, as:'member'}
+                                        <a href="@{admin.MemberAdminCtrl.details(member.id)}">
+                                           ${member.fullName} &nbsp;
+                                        </a>
+                                    #{/list}
+                                   </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer" style="text-align: right">
+                    <a  href="@{admin.PublicationAdminCtrl.edit(publication.id)}" type="button" class="btn btn-outline btn-info">Edit</a>
+                    <button type="submit" class="bt_delete btn btn-outline btn-danger" onclick="deletePublication(${publication.id})">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

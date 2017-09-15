@@ -1,0 +1,76 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - Publications Administration' /}
+#{set active: 'publications' /}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">${publication.title}</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <form method="POST" action="@{admin.PublicationAdminCtrl.update}">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="hidden" name="publication.id" value="${publication.id}" />
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input class="form-control" name="publication.title" value="${publication.title}"  />
+                                            <span class="help-block error-color">#{error 'publication.title'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Journal name</label>
+                                            <input class="form-control" name="publication.journal" value="${publication.journal}"  />
+                                            <span class="help-block error-color">#{error 'publication.journal'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Journal specific title</label>
+                                            <input class="form-control" name="publication.journalSpecificTitle" value="${publication.journalSpecificTitle}"  />
+                                            <span class="help-block error-color">#{error 'publication.journalSpecificTitle'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pages range</label>
+                                            <input class="form-control" name="publication.pagesRange" value="${publication.pagesRange}"  />
+                                            <span class="help-block error-color">#{error 'publication.pagesRange'/}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Publication date</label>
+                                            <input class="form-control" name="publication.datePublication"  value="${publication.datePublication}" />
+                                            <span class="help-block error-color">#{error 'publication.datePublication'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Donwload Link</label>
+                                            <input class="form-control" name="publication.url"  value="${publication.url}" />
+                                            <span class="help-block error-color">#{error 'publication.url'/}</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Attached Researchers</label>
+                                        #{select 'memberIds',
+                                        items:members,
+                                        multiple:'multiple',
+                                        size: '5',
+                                        valueProperty:'id',
+                                        labelProperty:'fullName',
+                                        class:'form-control' /}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div>
+                    <div class="panel-footer" style="text-align: right">
+                        <button type="submit" class="btn btn-outline btn-info">Save change</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

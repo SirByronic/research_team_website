@@ -1,0 +1,42 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Member(saidAAZZOU):
+  fullName: Said AAZZOU
+  institution: ENSEM - Casablanca
+  presentation: Ph.D Student at ENSEM - System Architecture Lab
+  email: said.aazzou@gmail.com
+  telephone: 0638985818
+  fax: None
+  url: http://www.aazzou.com
+  joinDate: 2014-11-01
+  photoURL: http://www.expert-juridique.fr/images/profile/lawyer/default.gif
+  photoID: sdszeazeazeazezaezae
+  category: studentCategory
+
+Member(hichamBEHJA):
+  fullName: Hicham BEHJA
+  institution: ENSEM - Casablanca
+  presentation: Ph. Doctor at ENSEM - System Architecture Lab
+  email: behja@gmail.com
+  telephone: 0690112244
+  fax: 065812293
+  url: http://www.behja.com
+  joinDate: 2007-11-01
+  photoURL: http://www.expert-juridique.fr/images/profile/lawyer/default.gif
+  photoID: sdszeazeazeazezaezae
+  category: doctorCategory
+
+Member(moukhtarZEMMOURI):
+  fullName: El Moukhtar ZEMMOURI
+  institution: ENSAM - Meknes
+  presentation: Ph. Doctor at ENSAM - Knowledge management
+  email: zemmouri@gmail.com
+  telephone: 0644223311
+  fax: 065914011
+  url: http://www.zemmouri.com
+  joinDate: 2010-11-01
+  photoURL: http://www.expert-juridique.fr/images/profile/lawyer/default.gif
+  photoID: aazazaazazazaza
+  category: doctorCategory
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>#{get 'title'/}</title>
+    <!-- Bootstrap -->
+#{stylesheet 'bootstrap.min.css'/}
+#{stylesheet 'front.css'/}
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="container">
+    <header class="margin20 nrm nlm">
+        <div class="row">
+            <div class="col-lg-6">
+                <a class="place-left" href="#" title="">
+                    <img src="@{'/public/images/logo.png'}" alt="team logo"/>
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <form method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="button">Search</button>
+                                    </span>
+                    </div>
+                    <!-- /input-group -->
+                </form>
+            </div>
+        </div>
+        <div class="row" id="navigation-bar">
+            <div class="col-lg-12">
+                <nav class="navbar">
+                    <a class="element brand" href="@{Application.index()}">Home</a>
+                    <span class="element-divider"></span>
+                    <a class="element brand" href="@{Application.about()}">About the team</a>
+                    <span class="element-divider"></span>
+                    <a class="element brand" href="@{ResearchAreaCtrl.index()}">Research Areas</a>
+                    <span class="element-divider"></span>
+                    <a class="element brand" href="@{ProjectCtrl.index()}">Projects</a>
+                    <span class="element-divider"></span>
+                    <a class="element brand" href="@{MemberCtrl.index()}">Researchers</a>
+                    <span class="element-divider"></span>
+                    <a class="element brand" href="@{PublicationCtrl.index()}">Publications</a>
+                    <span class="element-divider"></span>
+                    <a class="element brand" href="@{NewCtrl.index()}">News</a>
+                    <span class="element-divider"></span>
+                </nav>
+            </div>
+        </div>
+    </header>
+#{doLayout /}
+    <footer>
+        <hr/>
+        ModEC Team &copy;
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+#{script 'jquery-1.11.0.js'/}
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+#{script 'bootstrap.min.js'/}
+#{script 'global.js'/}
+</body>
+</html>

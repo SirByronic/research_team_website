@@ -1,0 +1,10 @@
+<div class="list-group">
+    <div class="list-group-item header">
+        <span class="glyphicon glyphicon-pencil"></span> News
+    </div>
+#{list items:lastNews, as:'_new'}
+    <a href="@{admin.NewAdminCtrl.details(_new.id)}" class="list-group-item">
+           ${_new.title}
+    </a>
+#{/list}
+</div>

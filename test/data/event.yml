@@ -1,0 +1,15 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Event(IEEEConference):
+  title: IEEE Morocco Conference Schedule
+  summary: The third edition of the IEEE Morocco Conference
+  content: IEEE Moroccan edition will be set at Conference palace in Marrakesh, the main subject is about big data application in the smart cities domain...
+  date: 2014-01-01
+
+
+Event(ThesisPresentation):
+  title: Automatic Ontology knowledge extraction thesis Schedule
+  summary: Mr. X will present his works for Ph.D Diploma..
+  content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti exercitationem labore pariatur voluptatibus! Molestias, repellat, saepe! Aut dolorem eligendi, facilis impedit inventore minima natus, non porro praesentium quidem rerum, sapiente.
+  date: 2014-11-01

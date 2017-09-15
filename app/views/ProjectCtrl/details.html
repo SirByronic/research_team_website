@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'MODEC Team - Research Areas' /}
+#{set active:'project' /}
+
+<ol class="breadcrumb default square rsaquo sm">
+    <li>
+        <a href="@{Application.index()}">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+    <li>
+        <a href="@{ProjectCtrl.index()}">
+            Projects
+        </a>
+    </li>
+    <li>
+    ${project.name}
+    </li>
+</ol>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+        #{ifnot project.imgURL == null}
+            <div class="col-md-4" style="border-right: 1px solid lightgray">
+                <img class="img-responsive"
+                     src="${project.imgURL}"
+                     alt="${project.name}" />
+
+                <table class="table table-condensed table-responsive table-user-information">
+                    <tr>
+                        <td>Organisation</td>
+                        <td>${project.organisation}</td>
+                    </tr>
+                    <tr>
+                        <td>Partnership</td>
+                        <td>${project.partnership}</td>
+                    </tr>
+                    <tr>
+                        <td>Start date</td>
+                        <td>${project.startDate.format("yyyy-MM-dd")}</td>
+                    </tr>
+                    <tr>
+                        <td>Finish Date</td>
+                        <td>${project.finishDate.format("yyyy-MM-dd")}</td>
+                    </tr>
+                </table>
+            </div>
+        #{/ifnot}
+            <div class="col-md-8">
+                <p>
+                #{verbatim }
+                                   ${project.description}
+                                #{/verbatim}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

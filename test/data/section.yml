@@ -1,0 +1,16 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
+Section(Section1):
+  name: Section 1
+  description: Description of the category 1
+
+
+Section(Section2):
+  name: Section 2
+  description: Description of the category 2
+
+
+Section(Section3):
+  name: Section 3
+  description: Description of the category 3

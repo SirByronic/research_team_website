@@ -1,0 +1,31 @@
+*{Work in progress.. Check out these pages :}*
+*{<ul>}*
+    *{<li><a href="@{ResearchAreaCtrl.index()}">Research Areas</a></li>}*
+    *{<li><a href="@{ProjectCtrl.index()}">Projects</a></li>}*
+    *{<li><a href="@{MemberCtrl.index()}">Researchers</a></li>}*
+    *{<li><a href="@{PublicationCtrl.index()}">Publications</a></li>}*
+    *{<li><a href="@{NewCtrl.index()}">News</a></li>}*
+*{</ul>}*
+#{extends 'main.html' /}
+#{set title:'ModEC Team Website' /}
+<div class="main-area">
+   <div class="row">
+       <div class="col-lg-8">
+            <div class="about-txt">
+                <div class="about-txt">
+                    #{verbatim }${about.hometxt}#{/verbatim}
+                </div>
+            </div>
+       </div>
+       <div class="col-lg-4">
+           <div class="row">
+               <div class="col-lg-12">
+                        #{include './blocks/news.html'/}
+               </div>
+               <div class="col-lg-12">
+                        #{include './blocks/researchers.html'/}
+               </div>
+           </div>
+       </div>
+   </div>
+</div>

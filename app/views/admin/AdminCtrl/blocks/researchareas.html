@@ -1,0 +1,15 @@
+<div class="list-group">
+    <div class="list-group-item header">
+        <span class="glyphicon glyphicon-globe"></span> Research Areas
+    </div>
+#{list items:lastResearchAreas, as:'researchArea'}
+    <a href="@{admin.ResearchAreaAdminCtrl.details(researchArea.id)}" class="list-group-item">
+        ${researchArea.name}
+    </a>
+#{/list}
+*{    <div class="list-group-item">
+        <a href="@{admin.ResearchAreaAdminCtrl.index()}" class="btn btn-outline btn-default btn-block" style="margin-top: -5px">
+            All Research Areas
+        </a>
+    </div>}*
+</div>

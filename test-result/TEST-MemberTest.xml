@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="0.183" errors="0" skipped="0" tests="1" name="MemberTest">
+  <testcase classname="MemberTest" name="createAndRetrieveMember" time="0.183">
+      </testcase>
+</testsuite>

@@ -1,0 +1,74 @@
+#{extends 'admin/main.html' /}
+#{set title:'MODEC Team - News Administration' /}
+#{set active: 'news' /}
+#{set 'moreScripts'}
+<script>
+    $(document).ready(function() {
+        $("#error-msg").css("display","none");
+    });
+</script>
+<script type="text/javascript">
+    function deleteNew(idNew){
+        var deleteRoute = #{jsRoute @admin.NewAdminCtrl.delete(':id') /};
+        $.ajax({
+            url: deleteRoute.url({id: idNew}),
+            type: deleteRoute.method,
+            success: function (data, textStatus, jqXHR) {
+                if(data.status == "success"){
+                    window.location.replace(#{jsRoute @admin.NewAdminCtrl.index() /}.url());
+                }else if(data.status == "error"){
+                    $("#error-msg").append("<p>"+data.error_msg+"</p>")
+                    $("#error-msg").css("display","block");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+    }
+
+</script>
+#{/set}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="page-header">${_new.title}</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div  id="error-msg" class="alert alert-danger" style="display: none">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-responsive"
+                                 src="${_new.imgURL}"
+                             >
+                        </div>
+                        <div class="col-md-8">
+                           <h4>Summary</h4>
+                            <p>${_new.summary}</p>
+                            <h4>Content</h4>
+                            <p>${_new.content}</p>
+                            <h4>Publication date</h4>
+                            <p>${_new.datePublication.format("yyyy-MM-dd")}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer" style="text-align: right">
+                    <a  href="@{admin.NewAdminCtrl.edit(_new.id)}" type="button" class="btn btn-outline btn-info">Edit</a>
+                    <button type="submit" class="bt_delete btn btn-outline btn-danger" onclick="deleteNew(${_new.id})">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
